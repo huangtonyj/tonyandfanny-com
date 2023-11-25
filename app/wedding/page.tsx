@@ -7,16 +7,14 @@ import homePicture from "public/images/_A7R8923.jpeg";
 
 export default function App() {
   return (
-    <div class="">
-      <div class="max-h-screen overflow-scroll">
-        <NavBar />
-        <Home />
-        <OurStory />
-        <Venue />
-        <Registry />
-        <RSVP />
-        <TravelIdeas />
-      </div>
+    <div className="max-h-screen overflow-scroll">
+      <NavBar />
+      <Home />
+      <OurStory />
+      <Venue />
+      <Registry />
+      <RSVP />
+      <TravelIdeas />
     </div>
   );
 }
@@ -33,8 +31,8 @@ function NavBar() {
 
   return (
     <>
-      <nav id="navbar" className="sticky top-0 p-10">
-        <ul class="flex">
+      <nav id="navbar" className="sticky top-0 mt-5 bg-slate-200">
+        <ul className="flex justify-center gap-4">
           {sections.map((item) => (
             <li
               key={item.label}
@@ -54,12 +52,30 @@ function NavBar() {
 }
 
 function Home() {
+  // TODO (animated hearts following cursor for a few seconds)
   return (
-    <div class="flex flex-col justify-center items-center ">
-      <section id="home">
-        <Image src={homePicture} alt="homepage image" class="max-h-screen" />
-      </section>
-    </div>
+    <section
+      id="home"
+      className="flex justify-center"
+      style={{
+        backgroundImage: "url(" + homePicture.src + ")",
+        backgroundSize: "cover",
+        width: "100%",
+        height: "100%",
+      }}
+    >
+      <div className="flex flex-col justify-center w-1/2 h-screen">
+        <h1 className="text-6xl font-bold text-center text-slate-900">
+          Tony & Fanny
+        </h1>
+        <p className="text-2xl font-bold text-center text-slate-900">
+          Love is in the Air...
+        </p>
+        <p className="text-2xl font-bold text-center text-slate-900">
+          Saturday, August 10, 2024
+        </p>
+      </div>
+    </section>
   );
 }
 
