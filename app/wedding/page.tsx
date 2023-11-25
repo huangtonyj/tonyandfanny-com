@@ -1,70 +1,105 @@
 "use client";
 
-import { useState, Suspense } from "react";
+import { useEffect, useState, Suspense, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/Image";
+import homePicture from "public/images/_A7R8923.jpeg";
 
 export default function App() {
-  const tabs = [
-    { icon: "🏠", label: "Home", tab: <Home /> },
-    { icon: "📸", label: "Our Story" },
-    { icon: "🗺️", label: "Venue" },
-    { icon: "💰", label: "Registry" },
-    { icon: "📝", label: "RSVP" },
-    { icon: "✈️", label: "Travel" },
+  return (
+    <div class="">
+      <div class="max-h-screen overflow-scroll">
+        <NavBar />
+        <Home />
+        <OurStory />
+        <Venue />
+        <Registry />
+        <RSVP />
+        <TravelIdeas />
+      </div>
+    </div>
+  );
+}
+
+function NavBar() {
+  const sections = [
+    { icon: "🏠", label: "Home", sectionId: "home" },
+    { icon: "📸", label: "Our Story", sectionId: "our-story" },
+    { icon: "🗺️", label: "Venue", sectionId: "venue" },
+    { icon: "💰", label: "Registry", sectionId: "registry" },
+    { icon: "📝", label: "RSVP", sectionId: "rsvp" },
+    { icon: "✈️", label: "Travel Ideas", sectionId: "travel-ideas" },
   ];
-  const [selectedTab, setSelectedTab] = useState(tabs[0]);
 
   return (
-    <div class="h-full">
-      <nav class="flex justify-center items-center mx-8 my-4">
-        <ul class="flex flex-row flex-grow">
-          {tabs.map((item) => (
+    <>
+      <nav id="navbar" className="sticky top-0 p-10">
+        <ul class="flex">
+          {sections.map((item) => (
             <li
               key={item.label}
-              className={item === selectedTab ? "selected" : ""}
-              onClick={() => setSelectedTab(item)}
+              onClick={() => {
+                document
+                  .querySelector(`#${item.sectionId}`)
+                  .scrollIntoView({ behavior: "smooth" });
+              }}
             >
               {`${item.icon} ${item.label}`}
-              {item === selectedTab ? (
-                <motion.div className="underline" layoutId="underline" />
-              ) : null}
             </li>
           ))}
         </ul>
       </nav>
-
-      <main class="h-full">
-        <AnimatePresence mode="wait">
-          <motion.div
-            class="h-full w-full flex justify-center items-center scale-900"
-            key={selectedTab ? selectedTab.label : "empty"}
-            initial={{ y: 10, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            exit={{ y: -10, opacity: 0 }}
-            transition={{ duration: 0.2 }}
-          >
-            {selectedTab.tab || selectedTab.icon}
-          </motion.div>
-        </AnimatePresence>
-      </main>
-    </div>
+    </>
   );
 }
 
 function Home() {
   return (
-    <Suspense>
-      <div class="h-full w-full flex justify-center items-center">
-        <Image
-          id="home"
-          src="/images/_A7R8923.jpeg"
-          alt="homepage image"
-          priority={true}
-          fill={true}
-          style={{ objectFit: "contain" }}
-        />
-      </div>
-    </Suspense>
+    <div class="flex flex-col justify-center items-center ">
+      <section id="home">
+        <Image src={homePicture} alt="homepage image" class="max-h-screen" />
+      </section>
+    </div>
+  );
+}
+
+function OurStory() {
+  return (
+    <section id="our-story">
+      <Image src={homePicture} alt="homepage image" />
+    </section>
+  );
+}
+
+function Venue() {
+  return (
+    <section id="venue">
+      <Image src={homePicture} alt="homepage image" />
+    </section>
+  );
+}
+
+function Registry() {
+  return (
+    <section id="registry">
+      <Image src={homePicture} alt="homepage image" />
+    </section>
+  );
+}
+
+function RSVP() {
+  // popup confetti animation following mouse movement after RSVP
+  return (
+    <section id="rsvp">
+      <Image src={homePicture} alt="homepage image" />
+    </section>
+  );
+}
+
+function TravelIdeas() {
+  return (
+    <section id="travel-ideas">
+      <Image src={homePicture} alt="homepage image" />
+    </section>
   );
 }
