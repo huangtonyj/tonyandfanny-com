@@ -37,19 +37,19 @@ function ExploreTravelIdeaBox() {
     <motion.div
       initial={{ scale: 0 }}
       animate={{ scale: 1, y: 310 }}
-      transition={{ type: "ease-out", duration: 0.25, delay: 1 }}
+      transition={{ type: "ease-out", duration: 0.25, delay: 0.5 }}
     >
       <motion.button
         className="text-center px-5 py-3 text-slate-800 bg-slate-100 rounded opacity-70"
         animate={{
-          rotate: [0, 1, -2, 1, 0],
+          rotate: [0, 2, -4, 2, 0],
           repeat: Infinity,
         }}
         transition={{
           type: "ease-in-out",
           duration: 1,
           repeat: Infinity,
-          repeatDelay: 1,
+          repeatDelay: 1.5,
         }}
         whileTap={{ scale: 0.8 }}
         whileHover={{ scale: 1.2 }}
