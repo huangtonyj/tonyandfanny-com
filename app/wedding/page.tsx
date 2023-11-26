@@ -98,6 +98,7 @@ function OurStory() {
 }
 
 function Venue() {
+  // join wine club referral link
   return (
     <section id="venue">
       <Image src={homePicture} alt="homepage image" />

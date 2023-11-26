@@ -16,7 +16,7 @@ export default function RootLayout({
 }) {
   return (
     <html className="h-full" lang="en">
-      <body className={`bg-slate-200 ${inter.className}`}>{children}</body>
+      <body className={`bg-slate-100 ${inter.className}`}>{children}</body>
     </html>
   );
 }
