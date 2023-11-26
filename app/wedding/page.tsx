@@ -2,7 +2,7 @@
 
 import { useEffect, useState, Suspense, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import Image from "next/Image";
+import Image from "next/image";
 
 import homePicture from "public/images/_A7R8923.jpeg";
 import saveTheDate1 from "public/images/save_the_date1.jpeg";
@@ -44,7 +44,7 @@ function NavBar() {
               onClick={() => {
                 document
                   .querySelector(`#${item.sectionId}`)
-                  .scrollIntoView({ behavior: "smooth" });
+                  ?.scrollIntoView({ behavior: "smooth" });
               }}
             >
               {`${item.icon} ${item.label}`}
