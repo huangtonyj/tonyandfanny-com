@@ -3,7 +3,10 @@
 import { useEffect, useState, Suspense, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/Image";
+
 import homePicture from "public/images/_A7R8923.jpeg";
+import saveTheDate1 from "public/images/save_the_date1.jpeg";
+import saveTheDate2 from "public/images/save_the_date2.jpeg";
 
 export default function App() {
   return (
@@ -24,8 +27,10 @@ function NavBar() {
     { icon: "🏠", label: "Home", sectionId: "home" },
     { icon: "📸", label: "Our Story", sectionId: "our-story" },
     { icon: "🗺️", label: "Venue", sectionId: "venue" },
-    { icon: "💰", label: "Registry", sectionId: "registry" },
+    { icon: "💰", label: "Schedule", sectionId: "schedule" },
+    { icon: "💰", label: "What To Expect", sectionId: "What to Expect" },
     { icon: "📝", label: "RSVP", sectionId: "rsvp" },
+    { icon: "💰", label: "Registry", sectionId: "registry" },
     { icon: "✈️", label: "Travel Ideas", sectionId: "travel-ideas" },
   ];
 
@@ -56,30 +61,35 @@ function Home() {
   return (
     <section
       id="home"
-      className="flex justify-center"
-      style={{
-        backgroundImage: "url(" + homePicture.src + ")",
-        backgroundSize: "cover",
-        width: "100%",
-        height: "100%",
-      }}
+      // className="flex justify-center"
+      // style={{
+      //   backgroundImage: "url(" + saveTheDate1.src + ")",
+      //   backgroundSize: "cover",
+      //   width: "100%",
+      //   height: "100%",
+      // }}
     >
-      <div className="flex flex-col justify-center w-1/2 h-screen">
-        <h1 className="text-6xl font-bold text-center text-slate-900">
-          Tony & Fanny
-        </h1>
-        <p className="text-2xl font-bold text-center text-slate-900">
-          Love is in the Air...
+      <div className="max-h-full max-w-full bg-slate-100 p-8">
+        <Image src={saveTheDate1} alt="save the date postcard" />
+      </div>
+      {/* <div className="flex flex-col justify-center w-1/2 h-screen bg-slate-100 opacity-30">
+        <p className="text-2xl text-center text-slate-800">
+          💕 is in the air...
         </p>
-        <p className="text-2xl font-bold text-center text-slate-900">
+        <h1 className="text-6xl text-center text-slate-800">Tony + Fanny</h1>
+        <p className="text-2xl text-center text-slate-800">
           Saturday, August 10, 2024
         </p>
-      </div>
+        <p className="text-2xl text-center text-slate-800">
+          Sonoma County, California
+        </p>
+      </div> */}
     </section>
   );
 }
 
 function OurStory() {
+  // List of animated transitiong flying photos + captions
   return (
     <section id="our-story">
       <Image src={homePicture} alt="homepage image" />
