@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@nextui-org/react": "^2.2.9",
+    "@vis.gl/react-google-maps": "^0.4.1",
     "framer-motion": "^10.16.12",
     "next": "14.0.2",
     "react": "^18",
