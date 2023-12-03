@@ -1,10 +1,6 @@
 "use client";
 
-import { useEffect, useState, Suspense, useRef } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import Image from "next/image";
-
-import React from "react";
+import { ReactNode } from "react";
 import {
   Navbar,
   NavbarBrand,
@@ -14,7 +10,7 @@ import {
   Button,
 } from "@nextui-org/react";
 
-export default function WeddingLayout({ children }) {
+export default function WeddingLayout({ children }: { children: ReactNode }) {
   return (
     <>
       <NavBar />
@@ -40,7 +36,13 @@ const NavBar = () => (
   </Navbar>
 );
 
-const NavBarLi = ({ sectionName, href }) => (
+const NavBarLi = ({
+  sectionName,
+  href,
+}: {
+  sectionName: string;
+  href: string;
+}) => (
   <NavbarItem>
     <Link size="lg" className="text-white text-xl font-light" href={href}>
       {sectionName}
