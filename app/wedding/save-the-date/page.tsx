@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState, Suspense, useRef } from "react";
+import { Button } from "@nextui-org/react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
@@ -21,7 +22,6 @@ export default function SaveTheDatePage() {
         priority
         fill
         style={{
-          padding: 24,
           objectFit: "cover",
         }}
       />
@@ -34,8 +34,8 @@ export default function SaveTheDatePage() {
 
 function Header() {
   return (
-    <header className="flex flex-col justify-center items-center gap-4 z-10 text-slate-200  absolute top-12">
-      <h1 className="text-5xl font-serif">Save the Date</h1>
+    <header className="flex flex-col justify-center items-center gap-4 z-10 text-slate-200  absolute top-24">
+      <h1 className="text-5xl font-extralight">Save the Date</h1>
       <h2 className="text-2xl font-extralight">Tony + Fanny</h2>
     </header>
   );
@@ -44,7 +44,11 @@ function Header() {
 function Footer() {
   return (
     <footer className="flex flex-col justify-center items-center z-10 text-slate-200  absolute bottom-24">
-      <h3 className="text-xl font-serif">08.10.24</h3>
+      <h3 className="text-xl font-extralight">08.10.24</h3>
+      <a href="webcal://save_the_date.ics" target="_blank">
+        Add to Calendar
+      </a>
+
       <h3 className="text-xl font-extralight">Sonoma County, CA</h3>
     </footer>
   );
