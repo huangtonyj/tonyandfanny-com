@@ -99,7 +99,7 @@ function OurStory() {
 function RSVP() {
   // popup confetti animation following mouse movement after RSVP
   return (
-    <section id="rsvp p-64">
+    <section id="rsvp">
       <Image src={homePicture} alt="homepage image" />
     </section>
   );
