@@ -1,10 +1,10 @@
 "use client";
 
-import { useEffect, useState, Suspense, useRef } from "react";
+import { Suspense, ReactNode } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { APIProvider, Map, Marker } from "@vis.gl/react-google-maps";
 
-export default function Venue() {
+export default function Venue(): ReactNode {
   // TODO join wine club referral link
 
   return (
@@ -34,15 +34,17 @@ export default function Venue() {
   );
 }
 
-function VenueMap() {
+function VenueMap(): ReactNode {
   const position = { lat: 61.2176, lng: -149.8997 };
-  const googleMapApiKey: string = process.env.GOOGLE_MAPS_API_KEY;
+  const googleMapApiKey = process.env.GOOGLE_MAPS_API_KEY as string;
 
   return (
     <APIProvider apiKey={googleMapApiKey}>
-      <Map center={position} zoom={10}>
-        <Marker position={position} />
-      </Map>
+      <Suspense fallback={<div>Loading...</div>}>
+        <Map center={position} zoom={10}>
+          <Marker position={position} />
+        </Map>
+      </Suspense>
     </APIProvider>
   );
 }
