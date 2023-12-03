@@ -4,86 +4,58 @@ import { useEffect, useState, Suspense, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 
-import homePicture from "public/images/_A7R8923.jpeg";
+import homePicture from "public/images/_DSC9584.jpeg";
 import saveTheDate1 from "public/images/save_the_date1.jpeg";
 import saveTheDate2 from "public/images/save_the_date2.jpeg";
 
 export default function App() {
   return (
-    <div className="max-h-screen overflow-scroll">
-      <NavBar />
+    <div className="scroll-smooth">
       <Home />
-      <OurStory />
       <Venue />
-      <Registry />
+      <OurStory />
+      {/* <Schedule /> */}
       <RSVP />
       <TravelIdeas />
+      <Footer />
     </div>
-  );
-}
-
-function NavBar() {
-  const sections = [
-    { icon: "🏠", label: "Home", sectionId: "home" },
-    { icon: "📸", label: "Our Story", sectionId: "our-story" },
-    { icon: "🗺️", label: "Venue", sectionId: "venue" },
-    { icon: "💰", label: "Schedule", sectionId: "schedule" },
-    { icon: "💰", label: "What To Expect", sectionId: "What to Expect" },
-    { icon: "📝", label: "RSVP", sectionId: "rsvp" },
-    { icon: "💰", label: "Registry", sectionId: "registry" },
-    { icon: "✈️", label: "Travel Ideas", sectionId: "travel-ideas" },
-  ];
-
-  return (
-    <>
-      <nav id="navbar" className="sticky top-0 mt-5 bg-slate-200">
-        <ul className="flex justify-center gap-4">
-          {sections.map((item) => (
-            <li
-              key={item.label}
-              onClick={() => {
-                document
-                  .querySelector(`#${item.sectionId}`)
-                  ?.scrollIntoView({ behavior: "smooth" });
-              }}
-            >
-              {`${item.icon} ${item.label}`}
-            </li>
-          ))}
-        </ul>
-      </nav>
-    </>
   );
 }
 
 function Home() {
   // TODO (animated hearts following cursor for a few seconds)
   return (
-    <section
-      id="home"
-      // className="flex justify-center"
-      // style={{
-      //   backgroundImage: "url(" + saveTheDate1.src + ")",
-      //   backgroundSize: "cover",
-      //   width: "100%",
-      //   height: "100%",
-      // }}
-    >
-      <div className="max-h-full max-w-full bg-slate-100 p-8">
-        <Image src={saveTheDate1} alt="save the date postcard" />
+    <section id="home" className="flex justify-center max-h-screen">
+      <div className="opacity-75">
+        <Image
+          src={homePicture}
+          alt="Tony and Fanny landing photo"
+          priority
+          fill
+          style={{
+            objectFit: "cover",
+            filter: "brightness(0.75)",
+          }}
+        />
       </div>
-      {/* <div className="flex flex-col justify-center w-1/2 h-screen bg-slate-100 opacity-30">
-        <p className="text-2xl text-center text-slate-800">
-          💕 is in the air...
-        </p>
-        <h1 className="text-6xl text-center text-slate-800">Tony + Fanny</h1>
-        <p className="text-2xl text-center text-slate-800">
-          Saturday, August 10, 2024
-        </p>
-        <p className="text-2xl text-center text-slate-800">
-          Sonoma County, California
-        </p>
-      </div> */}
+      <div className="z-10 h-screen flex flex-col justify-around my-16">
+        <div>
+          <p className="text-3xl text-center font-extralight text-white">
+            We're getting married!
+          </p>
+        </div>
+        <div>
+          <h1 className="text-8xl text-center font-extralight text-white">
+            Tony & Fanny
+          </h1>
+        </div>
+        <div>
+          <p className="text-2xl text-center font-light text-white">08.10.24</p>
+          <p className="text-2xl text-center font-light text-white">
+            Sonoma County, California
+          </p>
+        </div>
+      </div>
     </section>
   );
 }
@@ -92,7 +64,7 @@ function OurStory() {
   // List of animated transitiong flying photos + captions
   return (
     <section id="our-story">
-      <Image src={homePicture} alt="homepage image" />
+      <Image src={saveTheDate2} alt="homepage image" />
     </section>
   );
 }
@@ -100,16 +72,8 @@ function OurStory() {
 function Venue() {
   // join wine club referral link
   return (
-    <section id="venue">
-      <Image src={homePicture} alt="homepage image" />
-    </section>
-  );
-}
-
-function Registry() {
-  return (
-    <section id="registry">
-      <Image src={homePicture} alt="homepage image" />
+    <section id="venue" className="max-h-screen">
+      Venue section
     </section>
   );
 }
@@ -117,7 +81,7 @@ function Registry() {
 function RSVP() {
   // popup confetti animation following mouse movement after RSVP
   return (
-    <section id="rsvp">
+    <section id="rsvp p-64">
       <Image src={homePicture} alt="homepage image" />
     </section>
   );
@@ -130,3 +94,32 @@ function TravelIdeas() {
     </section>
   );
 }
+
+function Faq() {
+  return (
+    <section id="faq">
+      <Image src={homePicture} alt="homepage image" />
+      {/* 
+        - Where do I park
+        - What should I wear
+        - What should I bring
+        - What should I expect
+        - What is the schedule
+        - What is the timeline
+        - What is the menu
+        - Lodiging suggestions
+        - Registry? Cash please.
+       */}
+    </section>
+  );
+}
+
+const Footer = () => (
+  <footer className="flex flex-col justify-center items-center z-10 text-slate-200">
+    <a href="">FAQ</a>
+    <a href="">Travel Ideas</a>
+    <a href="webcal://save_the_date.ics" target="_blank">
+      Add to Calendar
+    </a>
+  </footer>
+);
