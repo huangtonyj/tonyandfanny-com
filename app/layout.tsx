@@ -5,7 +5,7 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Tony and Fanny",
+  title: "Tony & Fanny",
   description: "Tony and Fanny",
 };
 
@@ -15,7 +15,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html className="h-full" lang="en">
+    <html className="scroll-smooth" lang="en">
       <body className={`bg-slate-100 ${inter.className}`}>{children}</body>
     </html>
   );
