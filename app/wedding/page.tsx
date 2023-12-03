@@ -3,6 +3,7 @@
 import { useEffect, useState, Suspense, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
+import Venue from "app/lib/Venue";
 
 import homePicture from "public/images/_DSC9584.jpeg";
 import saveTheDate1 from "public/images/save_the_date1.jpeg";
@@ -13,11 +14,11 @@ export default function App() {
     <div className="scroll-smooth">
       <Home />
       <Venue />
-      <OurStory />
+      {/* <OurStory /> */}
       {/* <Schedule /> */}
-      <RSVP />
-      <TravelIdeas />
-      <Footer />
+      {/* <RSVP /> */}
+      {/* <TravelIdeas /> */}
+      {/* <Footer /> */}
     </div>
   );
 }
@@ -53,33 +54,6 @@ function Home() {
           <p className="text-2xl text-center font-light text-white">08.10.24</p>
           <p className="text-2xl text-center font-light text-white">
             Sonoma County, California
-          </p>
-        </div>
-      </div>
-    </section>
-  );
-}
-
-function Venue() {
-  // join wine club referral link
-  return (
-    <section id="venue" className="max-h-screen flex">
-      <div className="w-64 h-64 m-64">Embed google maps link</div>
-      <div className="flex flex-col justify-center">
-        <div>
-          <h1 className="text-8xl text-center font-extralight text-black">
-            Venue
-          </h1>
-        </div>
-        <div>
-          <p className="text-3xl text-center font-light text-black">
-            Trentadue Winery
-          </p>
-          <p className="text-2xl text-center font-light text-black">
-            19170 Geyserville Ave
-          </p>
-          <p className="text-2xl text-center font-light text-black">
-            Geyserville, CA 95441
           </p>
         </div>
       </div>
