@@ -41,7 +41,7 @@ function Home() {
       <div className="z-10 h-screen flex flex-col justify-around my-16">
         <div>
           <p className="text-3xl text-center font-extralight text-white">
-            We're getting married!
+            {"We're getting married!"}
           </p>
         </div>
         <div>
@@ -60,20 +60,38 @@ function Home() {
   );
 }
 
+function Venue() {
+  // join wine club referral link
+  return (
+    <section id="venue" className="max-h-screen flex">
+      <div className="w-64 h-64 m-64">Embed google maps link</div>
+      <div className="flex flex-col justify-center">
+        <div>
+          <h1 className="text-8xl text-center font-extralight text-black">
+            Venue
+          </h1>
+        </div>
+        <div>
+          <p className="text-3xl text-center font-light text-black">
+            Trentadue Winery
+          </p>
+          <p className="text-2xl text-center font-light text-black">
+            19170 Geyserville Ave
+          </p>
+          <p className="text-2xl text-center font-light text-black">
+            Geyserville, CA 95441
+          </p>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 function OurStory() {
   // List of animated transitiong flying photos + captions
   return (
     <section id="our-story">
       <Image src={saveTheDate2} alt="homepage image" />
-    </section>
-  );
-}
-
-function Venue() {
-  // join wine club referral link
-  return (
-    <section id="venue" className="max-h-screen">
-      Venue section
     </section>
   );
 }
