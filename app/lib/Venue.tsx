@@ -9,7 +9,7 @@ export default function Venue(): ReactNode {
 
   return (
     <section id="venue" className="max-h-screen flex">
-      <div className="w-64 h-64 m-64">
+      <div className="m-16">
         <VenueMap />
       </div>
       <div className="flex flex-col justify-center">
@@ -35,16 +35,16 @@ export default function Venue(): ReactNode {
 }
 
 function VenueMap(): ReactNode {
-  const position = { lat: 61.2176, lng: -149.8997 };
-  const googleMapApiKey = process.env.GOOGLE_MAPS_API_KEY as string;
+  const position = { lat: 38.67950828378351, lng: -122.87212411036099 };
+  const googleMapsApiKey = process.env.NEXT_PUBLIC_GOOGLE_MAPS_KEY;
 
   return (
-    <APIProvider apiKey={googleMapApiKey}>
-      <Suspense fallback={<div>Loading...</div>}>
-        <Map center={position} zoom={10}>
+    <>
+      <APIProvider apiKey={googleMapsApiKey}>
+        <Map center={position} zoom={10} className="w-64 h-64 m-16">
           <Marker position={position} />
         </Map>
-      </Suspense>
-    </APIProvider>
+      </APIProvider>
+    </>
   );
 }
