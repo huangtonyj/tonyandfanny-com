@@ -4,6 +4,7 @@ import { useEffect, useState, Suspense, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 
+import FloatingHearts from "app/lib/FloatingHearts";
 import Home from "app/lib/Home";
 import Venue from "app/lib/Venue";
 import Schedule from "app/lib/Schedule";
@@ -15,6 +16,7 @@ import saveTheDate2 from "public/images/save_the_date2.jpeg";
 export default function App() {
   return (
     <div className="scroll-smooth">
+      {/* <FloatingHearts /> */}
       <Home />
       <Venue />
       {/* <OurStory /> */}
