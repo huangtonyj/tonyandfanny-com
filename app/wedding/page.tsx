@@ -16,7 +16,7 @@ import saveTheDate2 from "public/images/save_the_date2.jpeg";
 export default function App() {
   return (
     <div className="scroll-smooth">
-      {/* <FloatingHearts /> */}
+      {/* <FloatingHearts /> TODO */}
       <Home />
       <Venue />
       {/* <OurStory /> */}

@@ -7,7 +7,6 @@ import Image from "next/image";
 import homePicture from "public/images/_DSC9584.jpeg";
 
 export default function Home() {
-  // TODO (animated hearts following cursor for a few seconds)
   return (
     <section id="home" className="flex justify-center max-h-screen">
       <div className="opacity-75">
@@ -33,8 +32,13 @@ export default function Home() {
             Tony & Fanny
           </h1>
         </div>
-        <div>
-          <p className="text-2xl text-center font-light text-white">08.10.24</p>
+        <div className="flex flex-col justify-center">
+          <a
+            className="text-2xl text-center font-light text-white underline"
+            href="/tony_fanny_wedding_date.ics"
+          >
+            08.10.24
+          </a>
           <p className="text-2xl text-center font-light text-white">
             Sonoma County, California
           </p>
