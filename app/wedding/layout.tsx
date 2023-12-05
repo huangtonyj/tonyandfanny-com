@@ -30,7 +30,8 @@ const NavBar = () => (
     <NavbarContent className="sm:flex gap-4" justify="center">
       <NavBarLi sectionName="Home" href="#home" />
       <NavBarLi sectionName="Venue" href="#venue" />
-      <NavBarLi sectionName="Our Story" href="#our-story" />
+      <NavBarLi sectionName="Schedule" href="#schedule" />
+      {/* <NavBarLi sectionName="Our Story" href="#our-story" /> */}
       <NavBarLi sectionName="RSVP" href="#rsvp" />
     </NavbarContent>
   </Navbar>

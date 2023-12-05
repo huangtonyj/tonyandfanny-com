@@ -4,6 +4,7 @@ import { useEffect, useState, Suspense, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import Venue from "app/lib/Venue";
+import Schedule from "app/lib/Schedule";
 
 import homePicture from "public/images/_DSC9584.jpeg";
 import saveTheDate1 from "public/images/save_the_date1.jpeg";
@@ -15,7 +16,7 @@ export default function App() {
       <Home />
       <Venue />
       {/* <OurStory /> */}
-      {/* <Schedule /> */}
+      <Schedule />
       {/* <RSVP /> */}
       {/* <TravelIdeas /> */}
       {/* <Footer /> */}
