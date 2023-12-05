@@ -4,6 +4,9 @@ import { Suspense, ReactNode } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { APIProvider, Map, Marker } from "@vis.gl/react-google-maps";
 
+const trentadueGoogleMapsLink =
+  "https://www.google.com/maps/place/Trentadue+Winery/@38.6793659,-122.8754393,17z/data=!3m1!4b1!4m6!3m5!1s0x80841019afbc2e6f:0xd8bacf73bd42d1ff!8m2!3d38.6793659!4d-122.8728644!16s%2Fg%2F1td0gqwv?hl=en-US&entry=ttu";
+
 export default function Venue(): ReactNode {
   // TODO join wine club referral link
 
@@ -22,22 +25,26 @@ export default function Venue(): ReactNode {
 
 function VenueInfo(): ReactNode {
   return (
-    <div className="flex flex-col justify-around">
+    <div className="flex flex-col justify-around h-96">
       <div>
         <h1 className="text-8xl text-center font-extralight text-black">
           Venue
         </h1>
       </div>
+
       <div>
         <p className="text-2xl text-center font-light text-black">
           Trentadue Winery
         </p>
-        <p className="text-xl text-center font-light text-black">
-          19170 Geyserville Ave
-        </p>
-        <p className="text-xl text-center font-light text-black">
-          Geyserville, CA 95441
-        </p>
+        <br />
+        <a href={trentadueGoogleMapsLink} target="_blank">
+          <p className="text-xl text-center font-light text-black underline">
+            19170 Geyserville Ave
+          </p>
+          <p className="text-xl text-center font-light text-black underline">
+            Geyserville, CA 95441
+          </p>
+        </a>
       </div>
     </div>
   );
@@ -57,7 +64,7 @@ function VenueMap(): ReactNode {
       <APIProvider apiKey={googleMapsApiKey}>
         <Map
           center={position}
-          zoom={10}
+          zoom={7}
           className="w-96 h-96 md:w-full md:max-w-3xl"
         >
           <Marker position={position} />
