@@ -13,7 +13,7 @@ export default function Venue(): ReactNode {
   return (
     <section
       id="venue"
-      className="py-12 md:py-18 px-12
+      className="py-12 px-12
                 w-screen 
                 flex gap-12 lg:gap-24 flex-col lg:flex-row justify-center items-center"
     >
@@ -25,7 +25,7 @@ export default function Venue(): ReactNode {
 
 function VenueInfo(): ReactNode {
   return (
-    <div className="flex flex-col justify-around h-96">
+    <div className="flex flex-col justify-evenly gap-12 h-full">
       <div>
         <h1 className="text-8xl text-center font-extralight text-black">
           Venue
