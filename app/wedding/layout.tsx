@@ -21,6 +21,7 @@ export default function WeddingLayout({ children }: { children: ReactNode }) {
 
 const NavBar = () => (
   <Navbar
+    shouldHideOnScroll
     className="fixed flex justify-center"
     style={{
       backgroundColor: "transparent",
