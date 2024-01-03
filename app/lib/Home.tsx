@@ -14,6 +14,7 @@ export default function Home() {
           src={homePicture}
           alt="Tony and Fanny landing photo"
           priority
+          placeholder="blur"
           fill
           style={{
             objectFit: "cover",

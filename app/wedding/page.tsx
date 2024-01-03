@@ -8,6 +8,7 @@ import FloatingHearts from "app/lib/FloatingHearts";
 import Home from "app/lib/Home";
 import Venue from "app/lib/Venue";
 import Schedule from "app/lib/Schedule";
+import Rsvp from "app/lib/Rsvp";
 
 import homePicture from "public/images/_DSC9584.jpeg";
 import saveTheDate1 from "public/images/save_the_date1.jpeg";
@@ -21,7 +22,7 @@ export default function App() {
       <Venue />
       {/* <OurStory /> */}
       <Schedule />
-      {/* <RSVP /> */}
+      {/* <Rsvp /> */}
       {/* <TravelIdeas /> */}
       {/* <Footer /> */}
     </div>
@@ -33,15 +34,6 @@ function OurStory() {
   return (
     <section id="our-story">
       <Image src={saveTheDate2} alt="homepage image" />
-    </section>
-  );
-}
-
-function RSVP() {
-  // popup confetti animation following mouse movement after RSVP
-  return (
-    <section id="rsvp">
-      <Image src={homePicture} alt="homepage image" />
     </section>
   );
 }
