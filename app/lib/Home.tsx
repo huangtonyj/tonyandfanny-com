@@ -29,7 +29,7 @@ export default function Home() {
           </p>
         </div>
         <div>
-          <h1 className="text-8xl text-center font-extralight text-white">
+          <h1 className="text-6xl md:text-8xl text-center font-extralight text-white">
             Tony & Fanny
           </h1>
         </div>
