@@ -8,8 +8,6 @@ const trentadueGoogleMapsLink =
   "https://www.google.com/maps/place/Trentadue+Winery/@38.6793659,-122.8754393,17z/data=!3m1!4b1!4m6!3m5!1s0x80841019afbc2e6f:0xd8bacf73bd42d1ff!8m2!3d38.6793659!4d-122.8728644!16s%2Fg%2F1td0gqwv?hl=en-US&entry=ttu";
 
 export default function Venue(): ReactNode {
-  // TODO join wine club referral link
-
   return (
     <section
       id="venue"
@@ -27,7 +25,7 @@ function VenueInfo(): ReactNode {
   return (
     <div className="flex flex-col justify-evenly gap-12 h-full">
       <div>
-        <h1 className="text-8xl text-center font-extralight text-black">
+        <h1 className="text-4xl text-center font-extralight text-black">
           Venue
         </h1>
       </div>
