@@ -12,7 +12,7 @@ export default function Schedule(): ReactNode {
     >
       <div
         className="w-1/2 min-h-96
-                flex gap-12 flex-col md:flex-row justify-evenly items-center"
+                flex gap-12 md:gap24 flex-col md:flex-row justify-evenly items-center"
       >
         <div>
           <h1 className="text-4xl text-center font-extralight text-black">
