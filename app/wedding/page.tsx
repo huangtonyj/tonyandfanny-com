@@ -22,7 +22,7 @@ export default function App() {
       <Venue />
       {/* <OurStory /> */}
       <Schedule />
-      {/* <Rsvp /> */}
+      <Rsvp />
       {/* <TravelIdeas /> */}
       {/* <Footer /> */}
     </div>
